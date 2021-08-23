@@ -20,8 +20,8 @@ public class WeatherServiceImpl implements WeatherService {
 	
 	public CityWeather getWeatherByCity(String cityName) {
 		//接口地址
-		String apiUrl = "http://web.juhe.cn:8080/environment/air/cityair?city=" + cityName + "&key=087095134902ea434c24705642cb2f44";
-
+		String apiUrl = "http://web.juhe.cn:8080/environment/air/cityair?city=" + cityName + "&key=you key";
+		
 		OkHttpClient okHttpClient = new OkHttpClient();
 		Request request = new Request.Builder()
 		    .url(apiUrl)
@@ -39,8 +39,10 @@ public class WeatherServiceImpl implements WeatherService {
 		
 		System.out.println(resuString);
 		
-//		 Gson gson = new GsonBuilder().create();
-//		 gson.toJson(resuString);
+		 Gson gson = new GsonBuilder().create();
+		 Object weather = gson.fromJson(resuString, CityWeather.class);
+		 
+//		 System.out.println(weather);
 		 
 		
 

@@ -2,7 +2,7 @@ package com.haihui.demo.model;
 
 import java.util.Date;
 
-public class CityWeather {
+public class CityWeather {	
 	private String cityName;
 	private Date updatedTime;
 	private String weather;
